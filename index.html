@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keystroke Emotion Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy-Centric Keystroke Emotion Detector</h1>
+        <p class="note">
+            This demo only records keyboard timing patterns, not the actual characters you type.
+        </p>
+
+        <label for="typing-area">Type the following (or anything you like):</label>
+        <textarea id="typing-area" rows="6" placeholder="Start typing here..."></textarea>
+
+        <div class="controls">
+            <label for="emotion-select">Your current emotion:</label>
+            <select id="emotion-select">
+                <option value="">-- Select emotion --</option>
+                <option value="Happy">Happy</option>
+                <option value="Sad">Sad</option>
+                <option value="Calm">Calm</option>
+                <option value="Stressed">Stressed</option>
+            </select>
+
+            <button id="submit-btn">Submit</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+
+        <div id="stats" class="stats">
+            <h2>Typing statistics</h2>
+            <ul>
+                <li>Average key hold: <span id="avg-hold">-</span> ms</li>
+                <li>Average flight time: <span id="avg-flight">-</span> ms</li>
+                <li>Total pauses (&gt; 1s): <span id="total-pauses">-</span></li>
+                <li>Average pause duration: <span id="avg-pause">-</span> ms</li>
+                <li>Words per minute: <span id="wpm">-</span></li>
+            </ul>
+        </div>
+
+        <div id="prediction" class="prediction">
+            <h2>Predicted emotion</h2>
+            <p id="predicted-emotion">-</p>
+        </div>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
