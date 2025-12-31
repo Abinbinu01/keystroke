@@ -201,5 +201,4 @@ if __name__ == '__main__':
     ensure_dataset_file()
     load_trained_model()
     port = int(os.environ.get('PORT', 5000))
-    print(f"🚀 https://{os.environ.get('RENDER_EXTERNAL_HOSTNAME')}")
     app.run(host='0.0.0.0', port=port, debug=False)
