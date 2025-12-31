@@ -198,10 +198,8 @@ def dataset_info():
     return jsonify({'dataset_exists': False})
 
 if __name__ == '__main__':
-    # Initialize on startup
     ensure_dataset_file()
     load_trained_model()
-    print("🚀 Server ready at http://127.0.0.1:5000")
-    print("📊 Dataset:", DATASET_FILE)
-    print("🧠 Model:", MODEL_FILE if model else "Not trained yet")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    print(f"🚀 https://{os.environ.get('RENDER_EXTERNAL_HOSTNAME')}")
+    app.run(host='0.0.0.0', port=port, debug=False)
